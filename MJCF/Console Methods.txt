@@ -1,0 +1,57 @@
+SetConsoleCursorPosition
+SetConsoleTextAttribute
+CONSOLE_CURSOR_INFO, SetConsoleCursorInfo
+
+assert( expr ) = "make sure expr is true!"
+
+_CRT_SECURE_NO_DEPRECATE
+USE_CUSTOM_CTRL_HANDLER
+NOSERVICE
+NOMCX
+NOIME
+WIN32_LEAN_AND_MEAN
+_WIN32_WINNT=0x0501
+
+DebugBreak / DebugBreakProcess
+
+#include <windows.h>
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <conio.h>
+#include <fstream>
+#include <math.h>
+#include <malloc.h>
+#include <crtdbg.h>
+#include <typeinfo>
+using namespace std;
+
+USE_CUSTOM_CTRL_HANDLER
+BOOL CtrlHandler( DWORD CtrlType )
+{
+	switch( CtrlType )
+	{
+		case CTRL_C_EVENT:
+
+			//TODO: Code here
+
+			return TRUE;
+
+		case CTRL_BREAK_EVENT:
+
+			//TODO: Code here
+
+			return TRUE;
+
+		case CTRL_CLOSE_EVENT: //The console must close
+
+			//TODO: Code here
+
+		case CTRL_LOGOFF_EVENT:
+		case CTRL_SHUTDOWN_EVENT:
+			exit(0);
+			return TRUE;
+		default:
+			return FALSE;
+	}
+}

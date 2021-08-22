@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Achillea", "Achillea\Achillea.vcproj", "{69F07CFA-4BC6-4ED1-8147-FC38A6927EE0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCryptic", "MFCryptic\MFCryptic.vcproj", "{FA546DF1-40CC-4386-90C6-3E9EE0DCE19A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tester", "Tester\Tester.vcproj", "{34C4B896-EAC5-4AFB-8419-BC379702DBCA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FA546DF1-40CC-4386-90C6-3E9EE0DCE19A} = {FA546DF1-40CC-4386-90C6-3E9EE0DCE19A}
+		{69F07CFA-4BC6-4ED1-8147-FC38A6927EE0} = {69F07CFA-4BC6-4ED1-8147-FC38A6927EE0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69F07CFA-4BC6-4ED1-8147-FC38A6927EE0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{69F07CFA-4BC6-4ED1-8147-FC38A6927EE0}.Debug|Win32.Build.0 = Debug|Win32
+		{69F07CFA-4BC6-4ED1-8147-FC38A6927EE0}.Release|Win32.ActiveCfg = Release|Win32
+		{69F07CFA-4BC6-4ED1-8147-FC38A6927EE0}.Release|Win32.Build.0 = Release|Win32
+		{FA546DF1-40CC-4386-90C6-3E9EE0DCE19A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FA546DF1-40CC-4386-90C6-3E9EE0DCE19A}.Debug|Win32.Build.0 = Debug|Win32
+		{FA546DF1-40CC-4386-90C6-3E9EE0DCE19A}.Release|Win32.ActiveCfg = Release|Win32
+		{FA546DF1-40CC-4386-90C6-3E9EE0DCE19A}.Release|Win32.Build.0 = Release|Win32
+		{34C4B896-EAC5-4AFB-8419-BC379702DBCA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34C4B896-EAC5-4AFB-8419-BC379702DBCA}.Debug|Win32.Build.0 = Debug|Win32
+		{34C4B896-EAC5-4AFB-8419-BC379702DBCA}.Release|Win32.ActiveCfg = Release|Win32
+		{34C4B896-EAC5-4AFB-8419-BC379702DBCA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

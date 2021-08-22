@@ -1,0 +1,87 @@
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+
+using namespace std;
+
+//Reduces expressions in the form of C * pow(X, 1/R)
+void RadReduce(int* coef, int root, int* radicand)
+{
+	int factor, n;
+	double temp, a;
+
+	while(true)
+	{
+		factor = 0;
+
+		//find a factor of the radicand that is a perfect root of root
+		for(n = 2; n < (*radicand) / 2; n++)
+		{
+			temp = (double)(*radicand) / pow((double)n, root);
+
+			if(modf(temp, &a) == 0)
+			{
+				factor = pow((double)n, root);
+				break;
+			}
+		}
+
+		if(factor == 0) //no factors found
+			return;
+
+		*coef = (*coef) * pow((double)factor, 1.0 / root);
+		(*radicand) = (*radicand / factor);
+	}
+}
+
+void play()
+{
+	int coef, radicand, root;
+
+	cout<<"Root: "; cin>>root;
+	cout<<"Radicand: "; cin>>radicand;
+	cout<<"Coefficient: "; cin>>coef;
+
+	double real;
+	double reduced;
+	int real_radicand = radicand;
+	int real_coef = coef;
+
+	real = coef * pow((double)radicand, (double)(1.0/root));
+	printf("\nReal:    %d * %d%c%d %c %.10f", coef, root, 0xFB, radicand, 0xF7, real);
+
+	RadReduce(&coef, root, &radicand);
+
+	reduced = coef * pow((double)radicand, (double)(1.0/root));
+	printf("\n\nReduced: %d * %d%c%d %c %.10f", coef, root, 0xFB, radicand, 0xF7, reduced);
+
+	cout<<"\n\n";
+
+	if((real_radicand == radicand) && (real_coef == coef))
+	{
+		printf("Expression cannot be reduced.");
+	}
+	else
+	{
+		if(real != reduced)
+			printf("REDUCTION ERROR!!");
+		else
+			printf("Reduction Success!");
+
+		if(real_coef == coef)printf("\nerror: coefficient is same");
+		if(real_radicand == radicand)printf("\nerror: radicand is same");
+	}
+}
+
+int main(int argc, char** args)
+{
+	cout.precision(10);
+
+	while(true)
+	{
+		play();
+
+		cout<<"\n\n\nPress [space] to do another calculation";
+		while(getchar() != ' ');
+	}
+}
